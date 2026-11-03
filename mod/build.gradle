@@ -1,0 +1,38 @@
+plugins {
+    id 'com.gtnewhorizons.retrofuturagradle' version '2.0.2'
+    id 'java'
+}
+
+group = 'com.hermes.gtnhseed'
+version = '1.0.11'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+    withSourcesJar()
+}
+
+minecraft {
+    mcVersion = '1.7.10'
+    username = 'Developer'
+}
+
+repositories {
+    maven { url = 'https://nexus.gtnewhorizons.com/repository/public/' }
+    mavenCentral()
+}
+
+dependencies {
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    archiveBaseName = 'gtnh-seed-collector'
+    manifest {
+        attributes 'Implementation-Version': project.version
+    }
+}

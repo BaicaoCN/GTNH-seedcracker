@@ -1,0 +1,9 @@
+*.jar
+*.class
+.gradle/
+build/
+out/
+classes/
+.DS_Store
+gtnh-solver*.txt
+gtnh-solver*.log
